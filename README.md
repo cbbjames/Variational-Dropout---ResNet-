@@ -25,19 +25,6 @@ Our method provides the highest level of sparsity with a similar accuracy
 |               | SWH      | 0.97  |                     | 200            |
 | (ours)        | SparseVD | 0.75  | 67 − 98 − 99.8 − 95 | **280**        |
 
-
-## CIFAR Experiments
-
-The plot contains the accuracy and sparsity level for VGG-like architectures of different sizes.
-The number of neurons and filters scales as _k_.
-Dense networks were trained with Binary Dropout, and Sparse VD networks were trained with Sparse Variational Dropout on all layers.
-The overall sparsity level, achieved by our method, is reported as a dashed line.
-The accuracy drop is negligible in most cases, and the sparsity level is high, especially in larger networks.
-
-<p align="center">
-<img height="318" src="http://ars-ashuha.ru/pdf/vdsdnn/vgg.png"/>
-</p>
-
 # Environment setup
 
 ```(bash)
@@ -46,7 +33,7 @@ virtualenv venv --system-site-packages
 source venv/bin/activate
 
 pip install numpy tabulate 'ipython[all]' sklearn matplotlib seaborn  
-pip install --upgrade https://github.com/Theano/Theano/archive/rel-0.9.0.zip
+pip install --upgrade https://github.com/Theano/Theano/archive/rel-1.0.0.zip
 pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 ```
 
@@ -57,14 +44,11 @@ source ~/venv/bin/activate
 cd variational-dropout-sparsifies-dnn
 THEANO_FLAGS='floatX=float32,device=gpu0,lib.cnmem=1' ipython ./experiments/<experiment>.py
 ```
-
+Variational Dropout on ResNet
+```
+./ResNet/run.sh
+```
 PS: If you have CuDNN problem please look at this [issue](https://github.com/ars-ashuha/variational-dropout-sparsifies-dnn/issues/3).
-
-# Further extensions
-
-These two papers heavily rely on the Sparse Variational Dropout technique and extend it to other applications:
-* [Structured Bayesian Pruning via Log-Normal Multiplicative Noise](https://arxiv.org/abs/1705.07283) provides a way to enforse _structured_ sparsity using a similar technique. This method allows to remove entire neurons and convolutional filters, which results in lighter architectures and a significant inference speed-up with standard deep learning frameworks.
-* [Bayesian Sparsification of Recurrent Neural Networks](https://arxiv.org/abs/1708.00077) adapts the Sparse Variational Dropout techniques for sparsification of various recurrent architectures. Authors report up to 200x compression of recurrent layers.
 
 # Citation
 
