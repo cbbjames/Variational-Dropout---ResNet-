@@ -9,7 +9,7 @@ This repo contains the code for the ICML17 paper, [Variational Dropout Sparsifie
 ## MNIST Experiments 
 
 The table containes the comparison of different sparsity-inducing techniques (Pruning (Han et al., 2015b;a), DNS (Guo et al., 2016), SWS (Ullrich et al., 2017)) on LeNet architectures.
-Our method provides the highest level of sparsity with a similar accuracy
+VD method provides the highest level of sparsity with a similar accuracy
 
 | Network       | Method   | Error | Sparsity per Layer  |  Compression |
 | -------------: | -------- | ----- | ------------------- | :--------------: |
