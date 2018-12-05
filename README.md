@@ -2,7 +2,7 @@
 
 This repo contains the code for the ICML17 paper, [Variational Dropout Sparsifies Deep Neural Networks](https://arxiv.org/abs/1701.05369).
 
-*Extension on ResNet*
+*Extension on ResNet* 
 *Fixed the out-dated dependency*
 
 ## MNIST Experiments 
