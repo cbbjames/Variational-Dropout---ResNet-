@@ -1,0 +1,1 @@
+THEANO_FLAGS='floatX=float32,device=cuda,lib.cnmem=1' PYTHONPATH='.' OMP_NUM_THREADS=4 python ./experiments/vgglike/vgglike-ard.py 1 cifar10 pretrain_res945.npy
